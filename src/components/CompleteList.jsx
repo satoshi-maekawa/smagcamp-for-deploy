@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import picture from '../image/picture.svg';
+const API_URL = "https://maekawa-smagcamp1.onrender.com";
 
 export const CompleteList = (props) => {
   const refBringItem = useRef(props.BringItem);
@@ -45,7 +46,8 @@ export const CompleteList = (props) => {
       props.setBringItem(refBringItem.current);
       props.setPutBringItem(refPutBringItem.current);
       console.log('fetch前refPutBringItem', refPutBringItem.current);
-      const res = await fetch('http://localhost:8080/changeCompItems', {
+      const res = await fetch(`${API_URL}/changeCompItems`, {
+      // const res = await fetch('http://localhost:8080/changeCompItems', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+const API_URL = "https://maekawa-smagcamp1.onrender.com";
 
 export const ItemRegistration = (props) => {
   const [itemName, setItemName] = useState("");
@@ -13,7 +14,8 @@ export const ItemRegistration = (props) => {
         accunt_id: 1,
         itemPhoto: null,
       };
-      const res = await fetch("http://localhost:8080/addItems", {
+      const res = await fetch(`${API_URL}/addItems`, {
+      // const res = await fetch("http://localhost:8080/addItems", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

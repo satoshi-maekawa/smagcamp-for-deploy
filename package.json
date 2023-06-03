@@ -16,12 +16,18 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
+  "engines": {
+    "node": "15.x",
+    "npm": "7.x"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "node src/server.js"
+    "server": "node src/server.js",
+    "migrate-latest": "NODE_ENV=production npx knex migrate:latest --knexfile ./knexfile.js",
+    "seed-data": "NODE_ENV=production npx knex seed:run --knexfile ./knexfile.js"
   },
   "eslintConfig": {
     "extends": [

@@ -1,6 +1,7 @@
 import React from 'react';
 import campImg from '../image/campIcon.svg';
 import picture from '../image/picture.svg';
+const API_URL = "https://maekawa-smagcamp1.onrender.com";
 
 export const ItemList = (props) => {
   const { putBringItem, setPutBringItem } = props;
@@ -28,7 +29,8 @@ export const ItemList = (props) => {
 
   const putBringList = async () => {
     try {
-      const res = await fetch('http://localhost:8080/changeBringItems', {
+      const res = await fetch(`${API_URL}/changeBringItems`, {
+      // const res = await fetch('http://localhost:8080/changeBringItems', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
